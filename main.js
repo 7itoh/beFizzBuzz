@@ -12,9 +12,9 @@ fzTitle.style.color = 'tomato';
 bzWrapp.style.backgroundColor = 'skyblue';
 bzTitle.style.color = 'white';
 
-const nmBtn = document.getElementById('nmBtn');
 const onBtn = document.getElementById('onBtn');
 const clBtn = document.getElementById('clBtn');
+const nmBtn = document.getElementById('nmBtn');
 
 const onPress = () => {
     let min = document.getElementById('minNum').value;
@@ -58,7 +58,7 @@ const onPress = () => {
     }
 }
 
-const numClear = () => { 
+const nmClear = () => { 
     document.getElementById('minNum').value = ''
     document.getElementById('maxNum').value = ''
 }
@@ -69,6 +69,6 @@ const onClear = () => {
     document.getElementById('fbzResult').innerHTML = '';
 }
 
-nmBtn.addEventListener('click', numClear);
 onBtn.addEventListener('click', onPress);
 clBtn.addEventListener('click', onClear);
+nmBtn.addEventListener('click', nmClear);
