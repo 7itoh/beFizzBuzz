@@ -12,6 +12,10 @@ fzTitle.style.color = 'tomato';
 bzWrapp.style.backgroundColor = 'skyblue';
 bzTitle.style.color = 'white';
 
+const nmBtn = document.getElementById('nmBtn');
+const onBtn = document.getElementById('onBtn');
+const clBtn = document.getElementById('clBtn');
+
 const onPress = () => {
     let min = document.getElementById('minNum').value;
     let max = document.getElementById('maxNum').value;
@@ -28,9 +32,11 @@ const onPress = () => {
     if (min >= max) {
         fbzResult.innerHTML = '';
         fbzResult.innerHTML = '倍数を[Min > Max]となるように入力してください';
+        return;
     } else if (!fzInput || !bzInput || fbzCheck1.test(fzInput) || fbzCheck1.test(bzInput) || fbzCheck2.test(fzInput) || fbzCheck2.test(bzInput)) {
         fbzResult.innerHTML = '';
         fbzResult.innerHTML = '整数値を入力してください';
+        return;
     } else {
         fbzResult.innerHTML = '';
         let val = '';
@@ -62,3 +68,7 @@ const onClear = () => {
     document.getElementById('bzInput').value = '';
     document.getElementById('fbzResult').innerHTML = '';
 }
+
+nmBtn.addEventListener('click', numClear);
+onBtn.addEventListener('click', onPress);
+clBtn.addEventListener('click', onClear);
