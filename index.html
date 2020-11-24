@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section>
+            <h1>FizzBuzz</h1>
+        </section>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h2>Input Display</h2>
+                <div>
+                    <form action="" name="fbzForm">
+                        <div id="mltWrapp">
+                            <h3>Set Multiple</h3>
+                            <div>
+                                Min : <input type="number" id="minNum" value="">
+                            </div>
+                            <div>
+                                Max : <input type="number" id="maxNum" value="">
+                            </div>
+                            <div>
+                                <input type="button" id="nmBtn" value="Clear Multiple">
+                            </div>
+                        </div>
+                        <div id="fzWrapp">
+                            <h3 id="fzTitle">Fizz : </h3>
+                            <input type="text" id="fzInput" value="" placeholder="整数を入力してください">
+                        </div>
+                        <div id="bzWrapp">
+                            <h3 id="bzTitle">Buzz : </h3>
+                            <input type="text" id="bzInput" value="" placeholder="整数を入力してください">
+                        </div>
+                        <div class="">
+                            <p>Click↓</p>
+                            <input type="button" id="onBtn" value="Add On Input!!">
+                            <input type="button" id="clBtn" value="Clear Display...">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Output Display</h2>
+                <ul id="fbzResult"></ul>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
