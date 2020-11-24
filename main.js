@@ -12,11 +12,11 @@ fzTitle.style.color = 'tomato';
 bzWrapp.style.backgroundColor = 'skyblue';
 bzTitle.style.color = 'white';
 
-const onBtn = document.getElementById('onBtn');
-const clBtn = document.getElementById('clBtn');
-const nmBtn = document.getElementById('nmBtn');
+const addInBtn = document.getElementById('onPressAddOnInputButton');
+const clInBtn = document.getElementById('onPressClearInputButton');
+const clNmBtn = document.getElementById('onPressClearNumRangeButton');
 
-const onPress = () => {
+const addOnFizzBuzzInput = () => {
     let min = document.getElementById('minNum').value;
     let max = document.getElementById('maxNum').value;
     console.log(min);
@@ -33,42 +33,42 @@ const onPress = () => {
         fbzResult.innerHTML = '';
         fbzResult.innerHTML = '倍数を[Min > Max]となるように入力してください';
         return;
-    } else if (!fzInput || !bzInput || fbzCheck1.test(fzInput) || fbzCheck1.test(bzInput) || fbzCheck2.test(fzInput) || fbzCheck2.test(bzInput)) {
+    }
+    if (!fzInput || !bzInput || fbzCheck1.test(fzInput) || fbzCheck1.test(bzInput) || fbzCheck2.test(fzInput) || fbzCheck2.test(bzInput)) {
         fbzResult.innerHTML = '';
         fbzResult.innerHTML = '整数値を入力してください';
         return;
-    } else {
-        fbzResult.innerHTML = '';
-        let val = '';
+    }
+    fbzResult.innerHTML = '';
+    let val = '';
 
-        for (let i = min; i <= max; i++) { 
-            if (i % fzInput === 0 && i % bzInput === 0) {
-                val = `FizzBuzz : ${i}`;
-            } else if (i % fzInput === 0) {
-                val = `Fizz : ${i}`;
-            } else if (i % bzInput === 0) {
-                val = `Buzz : ${i}`;
-            } else { 
-                val = '';
-            }
-            const li = document.createElement('li');
-            fbzResult.appendChild(li);
-            li.textContent = val;
+    for (let i = min; i <= max; i++) { 
+        if (i % fzInput === 0 && i % bzInput === 0) {
+            val = `FizzBuzz : ${i}`;
+        } else if (i % fzInput === 0) {
+            val = `Fizz : ${i}`;
+        } else if (i % bzInput === 0) {
+            val = `Buzz : ${i}`;
+        } else { 
+            val = '';
         }
+        const li = document.createElement('li');
+        fbzResult.appendChild(li);
+        li.textContent = val;
     }
 }
 
-const nmClear = () => { 
+const clearFizzBuzzRange = () => { 
     document.getElementById('minNum').value = ''
     document.getElementById('maxNum').value = ''
 }
 
-const onClear = () => {
+const clearFizzBuzzInput = () => {
     document.getElementById('fzInput').value = '';
     document.getElementById('bzInput').value = '';
     document.getElementById('fbzResult').innerHTML = '';
 }
 
-onBtn.addEventListener('click', onPress);
-clBtn.addEventListener('click', onClear);
-nmBtn.addEventListener('click', nmClear);
+addInBtn.addEventListener('click', addOnFizzBuzzInput);
+clInBtn.addEventListener('click', clearFizzBuzzInput);
+clNmBtn.addEventListener('click', clearFizzBuzzRange);
